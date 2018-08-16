@@ -34,7 +34,7 @@ class OAuth2Plugin(AuthPlugin):
         # token_url = "https://api.dailymotion.com/oauth/token"
         token_url = os.environ.get('AUTHORIZATION_URL')
         # r = requests.post(token_url, query_string=payload)
-        r = requests.get(token_url, params=payload)
+        r = requests.post(token_url, params=payload)
         if r.status_code != 200:
             print('oauth2DM: Invalid status code for token', r.status_code)
 
